@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="#1a1a2e"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Image Preview -->
+        <ImageView
+            android:id="@+id/adImagePreview"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:background="#2d3748"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+        <!-- Top Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/adTradeType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💰 Sell"
+                android:textSize="14sp"
+                android:textColor="#667eea"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/adFeatured"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐ FEATURED"
+                android:textSize="12sp"
+                android:textColor="#667eea"
+                android:visibility="gone"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/adVerified"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✅ Verified"
+                android:textSize="12sp"
+                android:textColor="#48bb78"
+                android:visibility="gone"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/adViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👁️ 0"
+                android:textSize="12sp"
+                android:textColor="#a0aec0"/>
+
+        </LinearLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/adTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Category -->
+        <TextView
+            android:id="@+id/adCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📌 Category"
+            android:textSize="12sp"
+            android:textColor="#a0aec0"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/adDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="14sp"
+            android:textColor="#a0aec0"
+            android:layout_marginTop="8dp"
+            android:maxLines="3"
+            android:ellipsize="end"/>
+
+        <!-- Price & Location -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/adPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💰 Price"
+                android:textSize="14sp"
+                android:textColor="#48bb78"/>
+
+            <TextView
+                android:id="@+id/adLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📍 Location"
+                android:textSize="14sp"
+                android:textColor="#a0aec0"
+                android:gravity="end"/>
+
+        </LinearLayout>
+
+        <!-- Exchange Info -->
+        <TextView
+            android:id="@+id/adExchange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔄 Wants: ..."
+            android:textSize="12sp"
+            android:textColor="#ed8936"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
+
+        <!-- Condition -->
+        <TextView
+            android:id="@+id/adCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔧 Condition"
+            android:textSize="12sp"
+            android:textColor="#a0aec0"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/adDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📅 Date"
+            android:textSize="12sp"
+            android:textColor="#a0aec0"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Contact -->
+        <TextView
+            android:id="@+id/adContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📞 Contact"
+            android:textSize="14sp"
+            android:textColor="#a0aec0"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/contactButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📞 Contact"
+                android:backgroundTint="#667eea"
+                android:textColor="#ffffff"
+                android:padding="10dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📤 Share"
+                android:backgroundTint="#48bb78"
+                android:textColor="#ffffff"
+                android:padding="10dp"
+                android:layout_marginStart="4dp"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

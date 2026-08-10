@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f0f1a"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📢 Post Your Ad"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#667eea"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Image Upload -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📸 Add Image"
+            android:textColor="#a0aec0"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📸 Add Photo"
+                android:backgroundTint="#667eea"
+                android:textColor="#ffffff"
+                android:padding="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Long press to remove)"
+                android:textSize="12sp"
+                android:textColor="#a0aec0"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/selectedImagePreview"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#1a1a2e"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+        <!-- Trade Type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔄 Trade Type"
+            android:textColor="#a0aec0"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/tradeTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a2e"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Exchange For -->
+        <TextView
+            android:id="@+id/exchangeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔄 Exchange For (what do you want?)"
+            android:textColor="#a0aec0"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="#667eea"
+            app:hintTextColor="#a0aec0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/exchangeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., I want a bicycle in exchange"
+                android:textColor="#ffffff"
+                android:textColorHint="#a0aec0"
+                android:visibility="gone"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Ad Type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📌 Ad Type"
+            android:textColor="#a0aec0"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/categoryTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a2e"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Sub Category -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📌 Category"
+            android:textColor="#a0aec0"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/subCategorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a2e"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Title -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="#667eea"
+            app:hintTextColor="#a0aec0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title"
+                android:textColor="#ffffff"
+                android:textColorHint="#a0aec0"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="#667eea"
+            app:hintTextColor="#a0aec0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:textColor="#ffffff"
+                android:textColorHint="#a0aec0"
+                android:minLines="4"
+                android:inputType="textMultiLine"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Price -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="#667eea"
+            app:hintTextColor="#a0aec0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/priceInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price (or mention 'Free' / 'Exchange')"
+                android:textColor="#ffffff"
+                android:textColorHint="#a0aec0"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Condition -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📌 Condition"
+            android:textColor="#a0aec0"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/conditionSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a2e"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Location -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="#667eea"
+            app:hintTextColor="#a0aec0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/locationInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Location"
+                android:textColor="#ffffff"
+                android:textColorHint="#a0aec0"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Contact Type -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📌 Contact Type"
+            android:textColor="#a0aec0"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/contactTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1a1a2e"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Contact -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="#667eea"
+            app:hintTextColor="#a0aec0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contactInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact Info"
+                android:textColor="#ffffff"
+                android:textColorHint="#a0aec0"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/postButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📢 Post Ad"
+            android:backgroundTint="#667eea"
+            android:textColor="#ffffff"
+            android:padding="14dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

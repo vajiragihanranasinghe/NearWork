@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/placeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Name"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/placeAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/placeRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rating"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/placePhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/placeWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Website"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDirections"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🗺️ Directions"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnFavorite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⭐ Favorite"
+                android:backgroundTint="#FF9800"
+                android:textColor="#000000"
+                android:padding="12dp"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📤 Share"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

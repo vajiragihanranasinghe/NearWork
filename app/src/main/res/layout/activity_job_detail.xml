@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Job Title -->
+        <TextView
+            android:id="@+id/jobTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Position"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#2196F3"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Company -->
+        <TextView
+            android:id="@+id/jobCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🏢 Company Name"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Location -->
+        <TextView
+            android:id="@+id/jobLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 Location"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Job Type -->
+        <TextView
+            android:id="@+id/jobType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋 Full-time"
+            android:textSize="16sp"
+            android:textColor="#4CAF50"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Salary -->
+        <TextView
+            android:id="@+id/jobSalary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💰 $50,000 - $80,000"
+            android:textSize="18sp"
+            android:textColor="#FF9800"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Posted Date -->
+        <TextView
+            android:id="@+id/jobPosted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📅 Posted recently"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📝 Job Description"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/jobDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job description goes here..."
+            android:textSize="14sp"
+            android:textColor="#B0B0B0"
+            android:padding="12dp"
+            android:background="#1A1A1A"
+            android:elevation="2dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/btnApply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📝 Apply"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⭐ Save"
+                android:backgroundTint="#FF9800"
+                android:textColor="#000000"
+                android:padding="10dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📤 Share"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:padding="10dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/btnMap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🗺️ Map"
+                android:backgroundTint="#9C27B0"
+                android:textColor="#FFFFFF"
+                android:padding="10dp"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

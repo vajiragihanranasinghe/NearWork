@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Spinner Style -->
+    <style name="DarkSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:popupBackground">#1A1A1A</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#1A1A1A</item>
+    </style>
+</resources>

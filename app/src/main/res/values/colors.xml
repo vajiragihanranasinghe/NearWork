@@ -1,5 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#0066FF</color>
-    <color name="white">#FFFFFF</color>
+    <!-- Premium Gradient Colors -->
+    <color name="gradient_start">#667eea</color>
+    <color name="gradient_end">#764ba2</color>
+    
+    <!-- Primary Colors -->
+    <color name="primary">#667eea</color>
+    <color name="primary_dark">#5a67d8</color>
+    <color name="primary_light">#7f9cf5</color>
+    
+    <!-- Secondary Colors -->
+    <color name="secondary">#48bb78</color>
+    <color name="secondary_dark">#38a169</color>
+    
+    <!-- Dark Theme -->
+    <color name="dark_bg">#0f0f1a</color>
+    <color name="dark_card">#1a1a2e</color>
+    <color name="dark_card_hover">#16213e</color>
+    
+    <!-- Light Theme -->
+    <color name="light_bg">#f7fafc</color>
+    <color name="light_card">#ffffff</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#a0aec0</color>
+    <color name="text_dark">#2d3748</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#48bb78</color>
+    <color name="warning">#ed8936</color>
+    <color name="error">#fc8181</color>
+    
+    <!-- Material Colors -->
+    <color name="purple_500">#667eea</color>
+    <color name="purple_700">#5a67d8</color>
+    <color name="teal_200">#81e6d9</color>
+    <color name="teal_700">#2c7a7b</color>
     <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
 </resources>
