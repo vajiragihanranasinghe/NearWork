@@ -11,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    // ⚠️ Replace with your actual URLs after creating the neawork-legal repo
+    // ⚠️ Replace with your actual URLs after creating the nearwork-legal repo
     private static final String PRIVACY_URL = "https://vajiragihanranasinghe.github.io/nearwork-legal/privacy.html";
     private static final String TERMS_URL   = "https://vajiragihanranasinghe.github.io/nearwork-legal/terms.html";
-    private static final String CONTACT_EMAIL = "vajiragihanranasinghe@gmail.com";
+    private static final String CONTACT_EMAIL = "wajira4u@gmail.com";
 
     Spinner languageSpinner;
     Button applyButton, blockedUsersButton, privacyButton, termsButton,
