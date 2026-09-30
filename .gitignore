@@ -1,8 +1,15 @@
-# Ignore Gradle project-specific cache directory
-.gradle
-
-# Ignore Gradle build output directory
-build
-
-# Ignore Kotlin plugin data
-.kotlin
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+app/google-services.json
+app/src/main/res/values/api_key.xml
+*.jks
+*.keystore
+keystore.properties
+.termux*
