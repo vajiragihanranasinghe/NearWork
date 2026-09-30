@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f0f1e"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Account"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This will permanently delete:"
+            android:textColor="#a0aec0"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Your profile\n• All your ads and images\n• Your blocked users list\n• Your account credentials"
+            android:textColor="#e53e3e"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This action cannot be undone."
+            android:textColor="#ed8936"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type DELETE below to confirm:"
+            android:textColor="#a0aec0"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/confirmInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DELETE"
+            android:textColor="#ffffff"
+            android:textColorHint="#4a5568"
+            android:inputType="text"
+            android:autofillHints="none"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/confirmDeleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Permanently Delete My Account"
+            android:backgroundTint="#e53e3e"
+            android:textColor="#ffffff"
+            android:enabled="false"
+            android:layout_marginBottom="16dp"/>
+
+        <ProgressBar
+            android:id="@+id/deleteProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/deleteStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#a0aec0"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -101,7 +101,7 @@ public class SettingsActivity extends AppCompatActivity {
                 .setTitle("Delete account?")
                 .setMessage("This permanently deletes your profile, ads, and messages. " +
                         "This cannot be undone.")
-                .setPositiveButton("Delete", (d, w) -> performDeleteAccount())
+                .setPositiveButton("Delete", (d, w) -> startActivity(new Intent(SettingsActivity.this, DeleteAccountActivity.class)))
                 .setNegativeButton("Cancel", null)
                 .show();
     }
