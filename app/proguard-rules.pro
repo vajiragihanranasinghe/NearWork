@@ -1,0 +1,5 @@
+-keep class com.google.firebase.** { *; }
+-keep class lk.vajira.nearwork.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.google.gson.** { *; }
