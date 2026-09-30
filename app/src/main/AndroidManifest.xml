@@ -82,6 +82,10 @@
         <activity
             android:name=".MyAdsActivity"
             android:exported="false"/>
+        <activity
+            android:name=".BlockedUsersActivity"
+            android:label="Blocked Users"
+            android:parentActivityName=".SettingsActivity" />
 
     </application>
 

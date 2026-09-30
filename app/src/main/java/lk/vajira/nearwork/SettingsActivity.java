@@ -73,7 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         blockedUsersButton.setOnClickListener(v -> {
-            Toast.makeText(this, "Blocked users list — coming soon", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(SettingsActivity.this, BlockedUsersActivity.class));
         });
 
         privacyButton.setOnClickListener(v ->

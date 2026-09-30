@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Image Preview -->
         <ImageView
             android:id="@+id/adImagePreview"
             android:layout_width="match_parent"
@@ -24,11 +23,11 @@
             android:layout_marginBottom="12dp"
             android:visibility="gone"/>
 
-        <!-- Top Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/adTradeType"
@@ -66,11 +65,21 @@
                 android:layout_height="wrap_content"
                 android:text="👁️ 0"
                 android:textSize="12sp"
-                android:textColor="#a0aec0"/>
+                android:textColor="#a0aec0"
+                android:layout_marginEnd="4dp"/>
+
+            <ImageButton
+                android:id="@+id/adOverflowButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_more"
+                android:contentDescription="More options"
+                android:scaleType="centerInside"
+                app:tint="#a0aec0"/>
 
         </LinearLayout>
 
-        <!-- Title -->
         <TextView
             android:id="@+id/adTitle"
             android:layout_width="match_parent"
@@ -81,7 +90,6 @@
             android:textColor="#ffffff"
             android:layout_marginTop="4dp"/>
 
-        <!-- Category -->
         <TextView
             android:id="@+id/adCategory"
             android:layout_width="match_parent"
@@ -91,7 +99,6 @@
             android:textColor="#a0aec0"
             android:layout_marginTop="4dp"/>
 
-        <!-- Description -->
         <TextView
             android:id="@+id/adDescription"
             android:layout_width="match_parent"
@@ -103,7 +110,6 @@
             android:maxLines="3"
             android:ellipsize="end"/>
 
-        <!-- Price & Location -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,7 +137,6 @@
 
         </LinearLayout>
 
-        <!-- Exchange Info -->
         <TextView
             android:id="@+id/adExchange"
             android:layout_width="match_parent"
@@ -142,7 +147,6 @@
             android:layout_marginTop="4dp"
             android:visibility="gone"/>
 
-        <!-- Condition -->
         <TextView
             android:id="@+id/adCondition"
             android:layout_width="match_parent"
@@ -152,7 +156,6 @@
             android:textColor="#a0aec0"
             android:layout_marginTop="4dp"/>
 
-        <!-- Date -->
         <TextView
             android:id="@+id/adDate"
             android:layout_width="match_parent"
@@ -162,7 +165,6 @@
             android:textColor="#a0aec0"
             android:layout_marginTop="4dp"/>
 
-        <!-- Contact -->
         <TextView
             android:id="@+id/adContact"
             android:layout_width="match_parent"
@@ -172,7 +174,6 @@
             android:textColor="#a0aec0"
             android:layout_marginTop="8dp"/>
 
-        <!-- Action Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
