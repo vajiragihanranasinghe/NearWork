@@ -9,6 +9,13 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
+def localProps = new Properties()
+def localPropsFile = rootProject.file("local.properties")
+if (localPropsFile.exists()) {
+    localProps.load(new FileInputStream(localPropsFile))
+}
+
+
 android {
     namespace 'lk.vajira.nearwork'
     compileSdk 35
@@ -20,8 +27,9 @@ android {
         versionCode 11
         versionName "11.0"
 
-        buildConfigField "String", "SUPABASE_URL", "\"${project.findProperty('SUPABASE_URL') ?: ''}\""
-        buildConfigField "String", "SUPABASE_ANON_KEY", "\"${project.findProperty('SUPABASE_ANON_KEY') ?: ''}\""
+        buildConfigField "String", "SUPABASE_URL", "\"${localProps['SUPABASE_URL'] ?: project.findProperty('SUPABASE_URL') ?: ''}\""
+        buildConfigField "String", "SUPABASE_ANON_KEY", "\"${localProps['SUPABASE_ANON_KEY'] ?: project.findProperty('SUPABASE_ANON_KEY') ?: ''}\""
+        buildConfigField "String", "LOCATIONIQ_KEY", "\"${localProps['LOCATIONIQ_KEY'] ?: project.findProperty('LOCATIONIQ_KEY') ?: ''}\""
     }
 
     signingConfigs {

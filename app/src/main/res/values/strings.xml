@@ -1,70 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">NearWork</string>
-    <string name="search">Search</string>
-    <string name="search_here">🔎 Search here...</string>
-    <string name="search_nearby">🔍 Search Nearby</string>
-    <string name="results">📋 Results</string>
-    <string name="no_results">🔍 Search to find places or jobs</string>
-    <string name="loading">⏳ Loading...</string>
-    <string name="location_not_selected">📍 Location not selected</string>
-    <string name="get_my_location">📍 Get My Location</string>
-    <string name="pick_on_map">🗺️ Pick on Map</string>
-    <string name="getting_location">📍 Getting location...</string>
-    <string name="location_found">✅ Location found!</string>
-    <string name="gps_available">GPS not available</string>
-    <string name="manual_selected">📍 Manually Selected</string>
-    <string name="permission_needed">⚠️ Location permission needed!</string>
-    <string name="post_ad">📢 Post Ad</string>
-    <string name="edit_ad">✏️ Edit Ad</string>
-    <string name="delete_ad">🗑️ Delete Ad</string>
-    <string name="contact">📞 Contact</string>
-    <string name="share">📤 Share</string>
-    <string name="favorite">⭐ Favorite</string>
-    <string name="buy">🛒 Buy</string>
-    <string name="sell">💰 Sell</string>
-    <string name="exchange">🔄 Exchange/Swap</string>
-    <string name="rent">📋 Rent</string>
-    <string name="free">🎁 Free</string>
-    <string name="request">🙏 Request</string>
-    <string name="services">🛠️ Services</string>
-    <string name="vehicles">🚗 Vehicles</string>
-    <string name="items">📦 Items</string>
-    <string name="classifieds">📢 Classifieds</string>
-    <string name="all">All</string>
-    <string name="home">Home</string>
-    <string name="favorites">Favorites</string>
-    <string name="my_ads">My Ads</string>
-    <string name="profile">Profile</string>
-    <string name="profile_title">👤 Profile</string>
-    <string name="full_name">Full Name</string>
-    <string name="email">Email</string>
-    <string name="phone">Phone Number</string>
-    <string name="save_profile">💾 Save Profile</string>
-    <string name="login">🔐 Login</string>
-    <string name="logout">🚪 Logout</string>
-    <string name="change_photo">📸 Change Photo</string>
-    <string name="not_logged_in">❌ Not logged in</string>
-    <string name="logged_in_as">✅ Logged in as</string>
-    <string name="settings">⚙️ Settings</string>
-    <string name="language">🌐 Language</string>
-    <string name="english">English</string>
-    <string name="sinhala">Sinhala</string>
-    <string name="tamil">Tamil</string>
-    <string name="dark_mode">🌙 Dark Mode</string>
-    <string name="light_mode">☀️ Light Mode</string>
-    <string name="enter_title">Please enter a title</string>
-    <string name="enter_description">Please enter a description</string>
-    <string name="enter_contact">Please enter contact info</string>
-    <string name="enter_exchange">Please enter what you want in exchange</string>
-    <string name="ad_posted">✅ Ad posted successfully!</string>
-    <string name="ad_deleted">🗑️ Ad deleted</string>
-    <string name="ad_updated">✅ Ad updated</string>
+
+    <!-- Bottom nav -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Tabs -->
+    <string name="tab_ads">Ads</string>
+    <string name="tab_places">Places</string>
+
+    <!-- Home / Ads feed -->
+    <string name="search_ads_hint">Search ads…</string>
+    <string name="category_all">All</string>
+    <string name="empty_ads_title">No ads yet</string>
+    <string name="empty_ads_subtitle">Be the first to post something!</string>
+    <string name="btn_post_ad">Post Ad</string>
+
+    <!-- Places tab -->
+    <string name="location_not_selected">Location not selected</string>
+    <string name="btn_get_location">Get My Location</string>
+    <string name="btn_pick_on_map">Pick on Map</string>
+    <string name="search_places_hint">Search places (police, hospital, cafe)…</string>
+    <string name="btn_search_nearby">Search Nearby</string>
+    <string name="results">Results</string>
+    <string name="empty_places_title">Search to find places</string>
+    <string name="empty_places_subtitle">Try: police, hospital, cafe, bank</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="section_general">General</string>
+    <string name="section_safety">Safety &amp; Privacy</string>
+    <string name="section_legal">Legal</string>
+    <string name="section_account">Account</string>
+    <string name="language">Language</string>
+    <string name="btn_apply_language">Apply Language</string>
+    <string name="btn_blocked_users">Blocked Users</string>
+    <string name="btn_privacy">Privacy Policy</string>
+    <string name="btn_terms">Terms of Service</string>
+    <string name="btn_report_problem">Report a Problem</string>
+    <string name="btn_delete_account">Delete Account</string>
+    <string name="app_version_format">NearWork v%1$s</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Phone Number</string>
+    <string name="btn_save_profile">Save Profile</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_change_photo">Change Photo</string>
+    <string name="not_logged_in">Not logged in</string>
+    <string name="logged_in_as_format">Logged in as %1$s</string>
+
+    <!-- Post Ad -->
+    <string name="post_ad_title">Post Your Ad</string>
+    <string name="section_image">Photo</string>
+    <string name="btn_add_photo">Add Photo</string>
+    <string name="image_hint">Long press to remove</string>
+    <string name="section_trade_type">Trade Type</string>
+    <string name="section_ad_type">Ad Type</string>
+    <string name="section_category">Category</string>
+    <string name="section_condition">Condition</string>
+    <string name="section_contact">Contact</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_price">Price (or "Free" / "Exchange")</string>
+    <string name="hint_location">Location</string>
+    <string name="hint_contact">Contact info</string>
+    <string name="hint_exchange">What do you want in exchange?</string>
+    <string name="btn_post">Post Ad</string>
+
+    <!-- Login -->
+    <string name="login_title">Welcome to NearWork</string>
+    <string name="login_subtitle_create">Create a new account</string>
+    <string name="login_subtitle_signin">Sign in to continue</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_create_account">Create Account</string>
+    <string name="btn_have_account">Already have an account? Login</string>
+    <string name="btn_no_account">No account? Create one</string>
+
+    <!-- Delete account -->
+    <string name="delete_title">Delete Account</string>
+    <string name="delete_warning_1">This will permanently delete:</string>
+    <string name="delete_warning_items">• Your profile\n• All your ads and images\n• Your blocked users list\n• Your account credentials</string>
+    <string name="delete_warning_2">This action cannot be undone.</string>
+    <string name="delete_confirm_label">Type DELETE below to confirm:</string>
+    <string name="delete_hint">DELETE</string>
+    <string name="btn_delete_permanently">Permanently Delete My Account</string>
+
+    <!-- Blocked users -->
+    <string name="blocked_users_title">Blocked Users</string>
+    <string name="empty_blocked">You haven\'t blocked anyone.</string>
+    <string name="btn_unblock">Unblock</string>
+
+    <!-- Common -->
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_retry">Retry</string>
+    <string name="loading">Loading…</string>
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_network">Check your internet connection</string>
+
+    <!-- Ad card -->
+    <string name="ad_views_format">%1$d views</string>
+    <string name="btn_contact">Contact</string>
+    <string name="btn_share">Share</string>
+    <string name="badge_featured">FEATURED</string>
+    <string name="badge_verified">VERIFIED</string>
     <string name="error">❌ Error</string>
-    <string name="your_location">📍 Your Location</string>
-    <string name="search_results">Search results</string>
-    <string name="select_location">📍 Select Location</string>
-    <string name="tap_to_select">📍 Tap on map to select location</string>
-    <string name="confirm">✅ Confirm</string>
-    <string name="cancel">✕ Cancel</string>
 </resources>

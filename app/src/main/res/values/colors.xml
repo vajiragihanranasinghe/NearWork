@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Premium Gradient Colors -->
-    <color name="gradient_start">#667eea</color>
-    <color name="gradient_end">#764ba2</color>
-    
-    <!-- Primary Colors -->
-    <color name="primary">#667eea</color>
-    <color name="primary_dark">#5a67d8</color>
-    <color name="primary_light">#7f9cf5</color>
-    
-    <!-- Secondary Colors -->
-    <color name="secondary">#48bb78</color>
-    <color name="secondary_dark">#38a169</color>
-    
-    <!-- Dark Theme -->
-    <color name="dark_bg">#0f0f1a</color>
-    <color name="dark_card">#1a1a2e</color>
-    <color name="dark_card_hover">#16213e</color>
-    
-    <!-- Light Theme -->
-    <color name="light_bg">#f7fafc</color>
-    <color name="light_card">#ffffff</color>
-    
-    <!-- Text Colors -->
-    <color name="text_primary">#ffffff</color>
-    <color name="text_secondary">#a0aec0</color>
-    <color name="text_dark">#2d3748</color>
-    
-    <!-- Status Colors -->
-    <color name="success">#48bb78</color>
-    <color name="warning">#ed8936</color>
-    <color name="error">#fc8181</color>
-    
-    <!-- Material Colors -->
-    <color name="purple_500">#667eea</color>
-    <color name="purple_700">#5a67d8</color>
-    <color name="teal_200">#81e6d9</color>
-    <color name="teal_700">#2c7a7b</color>
+    <!-- Backgrounds -->
+    <color name="bg_main">#0B0B0F</color>
+    <color name="bg_surface">#16161F</color>
+    <color name="bg_surface_variant">#1F1F2B</color>
+    <color name="bg_input">#1A1A24</color>
+
+    <!-- Borders / dividers -->
+    <color name="border_subtle">#2A2A38</color>
+    <color name="border_focus">#F97316</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A1A1AA</color>
+    <color name="text_tertiary">#6B6B7A</color>
+    <color name="text_disabled">#4A4A57</color>
+
+    <!-- Brand / accent -->
+    <color name="accent">#F97316</color>
+    <color name="accent_pressed">#EA580C</color>
+    <color name="accent_dim">#33F97316</color>
+
+    <!-- Semantic -->
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="danger">#EF4444</color>
+    <color name="danger_pressed">#DC2626</color>
+
+    <!-- Bottom nav -->
+    <color name="nav_selected">#F97316</color>
+    <color name="nav_unselected">#6B6B7A</color>
+    <color name="nav_bg">#0F0F15</color>
+
+    <!-- Common aliases -->
     <color name="black">#000000</color>
-    <color name="white">#ffffff</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <!-- Legacy aliases (referenced by older layouts) -->
+    <color name="primary">#F97316</color>
+    <color name="secondary">#A1A1AA</color>
+    <color name="dark_card">#16161F</color>
+    <color name="dark_bg">#0B0B0F</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#A1A1AA</color>
 </resources>

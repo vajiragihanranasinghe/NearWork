@@ -1,180 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A0A0A">
+    android:background="@color/bg_main">
 
-    <ScrollView
+    <!-- Main container: tabs + viewpager -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigation"
-        android:paddingBottom="80dp">
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/bottom_nav_height">
 
+        <!-- Top App Bar: brand + location chip -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/screen_padding_h"
+            android:paddingTop="@dimen/sp_sm"
+            android:paddingBottom="@dimen/sp_sm"
+            android:background="@color/bg_main">
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/app_name"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"/>
+
+            <TextView
+                android:id="@+id/locationChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="🔍 NearWork"
-                android:textSize="36sp"
-                android:textStyle="bold"
-                android:textColor="#2196F3"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:id="@+id/locationText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📍 Location not selected"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
-                android:padding="16dp"
-                android:background="#1A1A1A"
-                android:elevation="2dp"
-                android:layout_marginBottom="12dp"
-                android:minHeight="80dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="12dp">
-
-                <Button
-                    android:id="@+id/locationButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="📍 GPS"
-                    android:backgroundTint="#2196F3"
-                    android:textColor="#FFFFFF"
-                    android:padding="12dp"
-                    android:layout_marginEnd="6dp"/>
-
-                <Button
-                    android:id="@+id/pickLocationButton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="🗺️ Pick"
-                    android:backgroundTint="#667eea"
-                    android:textColor="#FFFFFF"
-                    android:padding="12dp"
-                    android:layout_marginStart="6dp"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#333333"
-                android:layout_marginBottom="12dp"/>
-
-            <EditText
-                android:id="@+id/searchBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="🔎 What do you need?"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#888888"
-                android:padding="14dp"
-                android:background="#1A1A1A"
-                android:elevation="2dp"
-                android:layout_marginBottom="12dp"/>
-
-            <Spinner
-                android:id="@+id/radiusSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#1A1A1A"
-                android:elevation="2dp"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp"/>
-
-            <Button
-                android:id="@+id/searchButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🔍 Search Nearby"
-                android:backgroundTint="#4CAF50"
-                android:textColor="#FFFFFF"
-                android:padding="12dp"
-                android:layout_marginBottom="16dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="📋 Results"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="8dp"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/resultsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#1A1A1A"
-                android:elevation="2dp"
-                android:padding="4dp"
-                android:visibility="gone"/>
-
-            <TextView
-                android:id="@+id/noResultsText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🔍 Search to find places or jobs"
-                android:textSize="16sp"
-                android:textColor="#888888"
-                android:gravity="center"
-                android:padding="40dp"
-                android:background="#1A1A1A"
-                android:elevation="2dp"/>
-
+                android:background="@drawable/bg_chip"
+                android:paddingHorizontal="@dimen/sp_sm"
+                android:paddingVertical="@dimen/sp_xs"
+                android:text="📍 Location"
+                android:textSize="@dimen/text_caption"
+                android:textColor="@color/text_secondary"
+                android:drawablePadding="@dimen/sp_xxs"/>
         </LinearLayout>
 
-    </ScrollView>
+        <!-- Tabs -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_main"
+            app:tabIndicatorColor="@color/accent"
+            app:tabIndicatorHeight="3dp"
+            app:tabSelectedTextColor="@color/accent"
+            app:tabTextColor="@color/text_tertiary"
+            app:tabRippleColor="@color/accent_dim"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabTextAppearance="@style/TextAppearance.NearWork.Tab"/>
 
-    <!-- Post Ad FAB -->
+        <!-- ViewPager2 for tab content -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <!-- Post Ad FAB (visible on both tabs) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabPostAd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/sp_md"
+        android:layout_marginBottom="88dp"
         android:src="@drawable/ic_add"
-        android:backgroundTint="#667eea"
-        app:fabSize="normal" />
-
-    <!-- Map FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
-        android:src="@drawable/ic_map"
-        android:backgroundTint="#2196F3"
-        app:fabSize="normal" />
+        android:contentDescription="@string/btn_post_ad"
+        app:backgroundTint="@color/accent"
+        app:tint="@color/white"
+        app:fabSize="normal"
+        app:elevation="6dp"/>
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#1A1A1A"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="#2196F3"
-        app:itemTextColor="#2196F3" />
+        android:layout_height="@dimen/bottom_nav_height"
+        android:layout_gravity="bottom"
+        style="@style/Widget.NearWork.BottomNav"
+        app:menu="@menu/bottom_nav_menu"/>
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

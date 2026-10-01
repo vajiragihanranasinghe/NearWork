@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_main">
+
+    <!-- Search bar row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/sp_md"
+        android:paddingTop="@dimen/sp_xs"
+        android:paddingBottom="@dimen/sp_xs"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input"
+            android:paddingHorizontal="@dimen/sp_sm"
+            android:hint="@string/search_ads_hint"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_tertiary"
+            android:textSize="@dimen/text_body"
+            android:singleLine="true"
+            android:inputType="text"
+            android:autofillHints="none"/>
+
+        <ImageButton
+            android:id="@+id/clearSearchButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="@dimen/sp_xs"
+            android:background="@drawable/bg_chip"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Clear"
+            android:scaleType="centerInside"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Category chips -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/sp_md"
+        android:paddingTop="@dimen/sp_xxs"
+        android:paddingBottom="@dimen/sp_xs"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:scrollbars="none"/>
+
+    <!-- Filter row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/sp_md"
+        android:paddingBottom="@dimen/sp_xs"
+        android:gravity="center_vertical">
+
+        <Spinner
+            android:id="@+id/tradeFilterSpinner"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip"
+            android:layout_marginEnd="@dimen/sp_xxs"/>
+
+        <Spinner
+            android:id="@+id/typeSpinner"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_chip"
+            android:layout_marginStart="@dimen/sp_xxs"/>
+
+    </LinearLayout>
+
+    <!-- Empty state (hidden when ads exist) -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="@dimen/sp_xl">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📭"
+            android:textSize="48sp"
+            android:layout_marginBottom="@dimen/sp_sm"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_ads_title"
+            android:textSize="@dimen/text_heading"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_ads_subtitle"
+            android:textSize="@dimen/text_body"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="@dimen/sp_xxs"/>
+
+    </LinearLayout>
+
+    <!-- Ads list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/adsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/sp_xxl"/>
+
+</LinearLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/sp_md">
+
+            <!-- Location card -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.NearWork.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sp_sm">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/sp_md">
+
+                    <TextView
+                        android:id="@+id/locationText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/location_not_selected"
+                        android:textSize="@dimen/text_body"
+                        android:textColor="@color/text_primary"
+                        android:minHeight="48dp"
+                        android:layout_marginBottom="@dimen/sp_sm"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/locationButton"
+                            style="@style/Widget.NearWork.Button.Primary"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="@string/btn_get_location"
+                            android:textSize="13sp"
+                            android:layout_marginEnd="@dimen/sp_xxs"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/pickLocationButton"
+                            style="@style/Widget.NearWork.Button.Secondary"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:text="@string/btn_pick_on_map"
+                            android:textSize="13sp"
+                            android:layout_marginStart="@dimen/sp_xxs"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Search input -->
+            <EditText
+                android:id="@+id/searchBox"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="@dimen/sp_md"
+                android:hint="@string/search_places_hint"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_tertiary"
+                android:textSize="@dimen/text_body"
+                android:singleLine="true"
+                android:inputType="text"
+                android:autofillHints="none"
+                android:layout_marginBottom="@dimen/sp_sm"/>
+
+            <!-- Radius -->
+            <Spinner
+                android:id="@+id/radiusSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"
+                android:paddingHorizontal="@dimen/sp_sm"
+                android:layout_marginBottom="@dimen/sp_md"/>
+
+            <!-- Search button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/searchButton"
+                style="@style/Widget.NearWork.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:text="@string/btn_search_nearby"
+                android:layout_marginBottom="@dimen/sp_lg"/>
+
+            <!-- Results label -->
+            <TextView
+                style="@style/Text.NearWork.Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/results"
+                android:layout_marginBottom="@dimen/sp_xs"/>
+
+            <!-- Results list -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resultsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:padding="@dimen/sp_xxs"
+                android:visibility="gone"/>
+
+            <!-- Empty state -->
+            <LinearLayout
+                android:id="@+id/noResultsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:padding="@dimen/sp_xl">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔍"
+                    android:textSize="40sp"
+                    android:layout_marginBottom="@dimen/sp_sm"/>
+
+                <TextView
+                    android:id="@+id/noResultsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_places_title"
+                    android:textSize="@dimen/text_body"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_places_subtitle"
+                    android:textSize="@dimen/text_caption"
+                    android:textColor="@color/text_tertiary"
+                    android:layout_marginTop="@dimen/sp_xxs"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Map FAB (Places tab only) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/sp_md"
+        android:layout_marginBottom="@dimen/sp_md"
+        android:src="@drawable/ic_map"
+        android:contentDescription="Map"
+        android:layout_alignParentEnd="false"
+        app:backgroundTint="@color/accent"
+        app:tint="@color/white"/>
+
+</LinearLayout>
