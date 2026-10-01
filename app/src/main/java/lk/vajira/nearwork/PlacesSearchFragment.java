@@ -44,7 +44,6 @@ public class PlacesSearchFragment extends Fragment {
     RecyclerView resultsRecyclerView;
     LinearLayout noResultsContainer;
     TextView noResultsText;
-    FloatingActionButton fabMap;
 
     FusedLocationProviderClient fusedLocationClient;
     double currentLat = 0.0;
@@ -77,7 +76,6 @@ public class PlacesSearchFragment extends Fragment {
         resultsRecyclerView = v.findViewById(R.id.resultsRecyclerView);
         noResultsContainer = v.findViewById(R.id.noResultsContainer);
         noResultsText = v.findViewById(R.id.noResultsText);
-        fabMap = v.findViewById(R.id.fabMap);
 
         resultsRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         adapter = new ResultsAdapter(resultsList, position -> {
@@ -98,19 +96,6 @@ public class PlacesSearchFragment extends Fragment {
         locationButton.setOnClickListener(x -> getCurrentLocation());
         pickLocationButton.setOnClickListener(x -> openLocationPicker());
         searchButton.setOnClickListener(x -> performSearch());
-
-        fabMap.setOnClickListener(x -> {
-            if (hasLocation) {
-                Intent i = new Intent(requireContext(), MapActivity.class);
-                i.putExtra("lat", currentLat);
-                i.putExtra("lng", currentLng);
-                i.putExtra("place_name", "Your Location");
-                if (!lastSearchResults.isEmpty()) i.putStringArrayListExtra("places_list", lastSearchResults);
-                startActivity(i);
-            } else {
-                Toast.makeText(requireContext(), "📍 Set your location first!", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         updateResultsVisibility();
     }
@@ -233,6 +218,19 @@ public class PlacesSearchFragment extends Fragment {
         } else {
             resultsRecyclerView.setVisibility(View.VISIBLE);
             noResultsContainer.setVisibility(View.GONE);
+        }
+    }
+
+    public void openMap() {
+        if (hasLocation) {
+            Intent i = new Intent(requireContext(), MapActivity.class);
+            i.putExtra("lat", currentLat);
+            i.putExtra("lng", currentLng);
+            i.putExtra("place_name", "Your Location");
+            if (!lastSearchResults.isEmpty()) i.putStringArrayListExtra("places_list", lastSearchResults);
+            startActivity(i);
+        } else {
+            Toast.makeText(requireContext(), "📍 Set your location first!", Toast.LENGTH_SHORT).show();
         }
     }
 }

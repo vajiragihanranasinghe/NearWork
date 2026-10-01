@@ -88,7 +88,9 @@ public class AdsFeedFragment extends Fragment {
         // Category chips
         List<String> cats = new ArrayList<>();
         cats.add("All");
-        cats.addAll(adManager.getCategories());
+        for (String c : adManager.getCategories()) {
+            if (!cats.contains(c)) cats.add(c);
+        }
         categoriesRecycler.setAdapter(new CategoryAdapter(cats));
 
         // Search

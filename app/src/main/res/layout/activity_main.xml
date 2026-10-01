@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_main">
 
-    <!-- Main container: tabs + viewpager -->
+    <!-- Top bar + tabs + pager -->
     <LinearLayout
+        android:id="@+id/contentArea"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginBottom="@dimen/bottom_nav_height">
+        android:layout_above="@id/bottomNavigation"
+        android:orientation="vertical">
 
-        <!-- Top App Bar: brand + location chip -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,8 +20,7 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="@dimen/screen_padding_h"
             android:paddingTop="@dimen/sp_sm"
-            android:paddingBottom="@dimen/sp_sm"
-            android:background="@color/bg_main">
+            android:paddingBottom="@dimen/sp_sm">
 
             <TextView
                 android:layout_width="0dp"
@@ -40,13 +38,11 @@
                 android:background="@drawable/bg_chip"
                 android:paddingHorizontal="@dimen/sp_sm"
                 android:paddingVertical="@dimen/sp_xs"
-                android:text="📍 Location"
+                android:text="Location"
                 android:textSize="@dimen/text_caption"
-                android:textColor="@color/text_secondary"
-                android:drawablePadding="@dimen/sp_xxs"/>
+                android:textColor="@color/text_secondary"/>
         </LinearLayout>
 
-        <!-- Tabs -->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
@@ -56,12 +52,9 @@
             app:tabIndicatorHeight="3dp"
             app:tabSelectedTextColor="@color/accent"
             app:tabTextColor="@color/text_tertiary"
-            app:tabRippleColor="@color/accent_dim"
             app:tabMode="fixed"
-            app:tabGravity="fill"
-            app:tabTextAppearance="@style/TextAppearance.NearWork.Tab"/>
+            app:tabGravity="fill"/>
 
-        <!-- ViewPager2 for tab content -->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
@@ -70,14 +63,15 @@
 
     </LinearLayout>
 
-    <!-- Post Ad FAB (visible on both tabs) -->
+    <!-- FAB — swaps icon/action per tab: + on Ads, Map on Places -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabPostAd"
+        android:id="@+id/fabMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/bottomNavigation"
         android:layout_marginEnd="@dimen/sp_md"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="@dimen/sp_md"
         android:src="@drawable/ic_add"
         android:contentDescription="@string/btn_post_ad"
         app:backgroundTint="@color/accent"
@@ -85,13 +79,12 @@
         app:fabSize="normal"
         app:elevation="6dp"/>
 
-    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_nav_height"
-        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
         style="@style/Widget.NearWork.BottomNav"
         app:menu="@menu/bottom_nav_menu"/>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

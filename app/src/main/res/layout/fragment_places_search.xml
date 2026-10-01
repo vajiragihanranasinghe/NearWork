@@ -162,18 +162,4 @@
 
     </ScrollView>
 
-    <!-- Map FAB (Places tab only) -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/sp_md"
-        android:layout_marginBottom="@dimen/sp_md"
-        android:src="@drawable/ic_map"
-        android:contentDescription="Map"
-        android:layout_alignParentEnd="false"
-        app:backgroundTint="@color/accent"
-        app:tint="@color/white"/>
-
 </LinearLayout>

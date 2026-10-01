@@ -2,12 +2,10 @@ package lk.vajira.nearwork;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -21,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager;
     BottomNavigationView bottomNav;
-    FloatingActionButton fabPostAd;
+    FloatingActionButton fabMain;
 
     private static final String[] TAB_TITLES = {"Ads", "Places"};
+
+    private PlacesSearchFragment placesFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +33,14 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         bottomNav = findViewById(R.id.bottomNavigation);
-        fabPostAd = findViewById(R.id.fabPostAd);
+        fabMain = findViewById(R.id.fabMain);
 
         viewPager.setAdapter(new FragmentStateAdapter(this) {
             @NonNull @Override
             public Fragment createFragment(int position) {
-                return position == 0 ? new AdsFeedFragment() : new PlacesSearchFragment();
+                if (position == 0) return new AdsFeedFragment();
+                placesFragment = new PlacesSearchFragment();
+                return placesFragment;
             }
             @Override public int getItemCount() { return 2; }
         });
@@ -48,10 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setCurrentItem(0, false);
 
-        fabPostAd.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PostAdActivity.class);
-            startActivity(intent);
+        // FAB swaps icon + action per tab
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override public void onPageSelected(int position) {
+                updateFabForTab(position);
+            }
         });
+        updateFabForTab(0);
 
         bottomNav.setSelectedItemId(R.id.nav_home);
         bottomNav.setOnItemSelectedListener(item -> {
@@ -60,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(0, true);
                 return true;
             } else if (id == R.id.nav_search) {
-                // Switch to Places tab and focus its search
                 viewPager.setCurrentItem(1, true);
-                Toast.makeText(this, "Search places below", Toast.LENGTH_SHORT).show();
                 return true;
             } else if (id == R.id.nav_favorites) {
                 startActivity(new Intent(MainActivity.this, FavoritesActivity.class));
@@ -76,5 +79,26 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    private void updateFabForTab(int position) {
+        if (position == 0) {
+            // Ads tab → Post Ad
+            fabMain.setImageResource(R.drawable.ic_add);
+            fabMain.setContentDescription(getString(R.string.btn_post_ad));
+            fabMain.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, PostAdActivity.class)));
+        } else {
+            // Places tab → Open Map
+            fabMain.setImageResource(R.drawable.ic_map);
+            fabMain.setContentDescription("Open map");
+            fabMain.setOnClickListener(v -> {
+                if (placesFragment != null) {
+                    placesFragment.openMap();
+                } else {
+                    startActivity(new Intent(MainActivity.this, MapActivity.class));
+                }
+            });
+        }
     }
 }
